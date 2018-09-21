@@ -18,10 +18,7 @@ public class TextOperations {
      *
      * @return true если все слова уникальные; false - если есть повторяющиеся слова
      */
-    public boolean isAllWordsUnique() throws EmptyTextException {
-        if(text.isEmpty()){
-            throw new EmptyTextException();
-        }
+    public boolean isAllWordsUnique(){
         String words[] = tokenize();
         return isEqualWords(words);
     }

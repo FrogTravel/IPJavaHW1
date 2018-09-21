@@ -1,6 +1,5 @@
 package UnitTests;
 
-import Model.EmptyTextException;
 import Model.TextOperations;
 import org.junit.jupiter.api.Test;
 
@@ -12,13 +11,13 @@ class TextOperationsTest {
 
 
     @Test
-    public void uniqueTextTest() throws EmptyTextException {
+    public void uniqueTextTest() {
         TextOperations textOperations = new TextOperations(uniqueTestText);
         assertTrue(textOperations.isAllWordsUnique());
     }
 
     @Test
-    public void notUniqueTextTest() throws EmptyTextException {
+    public void notUniqueTextTest() {
         TextOperations textOperations = new TextOperations(notUniqueTestText);
         assertFalse(textOperations.isAllWordsUnique());
     }
