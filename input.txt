@@ -1,0 +1,1 @@
+Here’s the source code for a complete Java class that demonstrates how to open a URL and read data from that URL qwee
