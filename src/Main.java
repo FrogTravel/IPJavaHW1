@@ -9,20 +9,20 @@ public class Main {
         Reader reader = new Reader();
 
         Presenter presenter = new Presenter();
-        System.out.println("Введите URL:");
 
-
-        String urlPath = reader.readUrlFromConsole();
 
         TextOperations textOperations;
         try {
-            textOperations = new TextOperations(reader.readTextFromURL(urlPath));
-            presenter.printResultOfUniqueness(textOperations);
-
+            for (int i = 1; i < args.length; i++) {
+                if (args[0].equals("1")) {
+                    presenter.printResultOfUniqueness(reader.readFile(args[i]));
+                } else if (args[0].equals("2")) {
+                    presenter.printResultOfSum(reader.readFile(args[i]));
+                } else {
+                }
+            }
         } catch (IOException e) {
-            System.out.println("Неправильная URL!!");
         }
 
     }
-
 }

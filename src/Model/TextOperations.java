@@ -3,9 +3,6 @@ package Model;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- *
- */
 public class TextOperations {
     private String text;
 
@@ -39,12 +36,28 @@ public class TextOperations {
      *
      * @param words слова которые нужно проверить
      * @return true - если было хоть одно такое же слово; false - если все слова уникальные
-     * TODO может нужно переименовать
      */
     private boolean isEqualWords(String[] words) {
         Set<String> uniqueWords = new HashSet<>();
         for (String word : words)
             if (!uniqueWords.add(word.toLowerCase())) return false;
         return true;
+    }
+
+    /**
+     * Метод считает сумму всем четных чисел
+     * @return
+     */
+    public float countSum(){
+        String[] tokens = tokenize();
+        float sum = 0;
+        float num;
+        for (int i = 0; i < tokens.length; i++) {
+            if((num = Float.valueOf(tokens[i])) % 2 == 0){
+                sum += num;
+                System.out.println(sum);
+            }
+        }
+        return sum;
     }
 }
