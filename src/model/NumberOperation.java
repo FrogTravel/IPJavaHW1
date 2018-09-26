@@ -6,11 +6,16 @@ public class NumberOperation implements Operation {
     /**
      * Обработчик с числами
      * @param s новый токен под обработку
-     * @return всегда true так как нет случая ошибок
+     * @return всегда true или false если ошибка форматирования 
      */
     @Override
     public boolean process(String s) {
-       countSum(Float.valueOf(s));
+        try {
+            countSum(Float.valueOf(s));
+        }catch (NumberFormatException e){
+            System.err.println("Не удалось сконвертировать в тип float. Проверьте введенные данные");
+            return false;
+        }
        return true;
     }
 

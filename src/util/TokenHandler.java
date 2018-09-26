@@ -26,7 +26,7 @@ public class TokenHandler {
             System.out.println("----------------------------------------");
 
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("\nНеправильный путь к файлу!\n");
         }
 
 
